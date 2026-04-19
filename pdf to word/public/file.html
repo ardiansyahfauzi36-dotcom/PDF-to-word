@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocConverter - Word to PDF & PDF to Word Online Gratis</title>
+    <meta name="description" content="Convert file Word ke PDF dan PDF ke Word secara online gratis. Cepat, aman, dan mudah digunakan.">
+    <meta name="keywords" content="word to pdf, pdf to word, converter, online, gratis, docx, convert">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <!-- Toast Notification -->
+    <div id="toast" class="toast"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="logo">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+                    <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M14 2V8H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M12 18V12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M9 15L12 12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+                <span>DocConverter</span>
+            </a>
+            <div class="nav-links">
+                <a href="#features">Fitur</a>
+                <a href="#converter">Convert</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Convert File <span class="gradient-text">Word ⇄ PDF</span> Online Gratis</h1>
+            <p>Tool converter cepat, aman, dan mudah digunakan. Tidak perlu install software apapun.</p>
+            <a href="#converter" class="cta-button">
+                Mulai Convert
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+                    <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </a>
+        </div>
+        <div class="hero-bg"></div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2>Kenapa Pilih DocConverter?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Super Cepat</h3>
+                    <p>Convert file dalam hitungan detik dengan teknologi modern</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Aman & Private</h3>
+                    <p>File otomatis dihapus dalam 5 menit setelah convert</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💯</div>
+                    <h3>100% Gratis</h3>
+                    <p>Tidak ada biaya tersembunyi atau batasan convert</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Mobile Friendly</h3>
+                    <p>Bisa diakses dari HP, tablet, atau komputer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Converter Section -->
+    <section id="converter" class="converter-section">
+        <div class="container">
+            <h2>Pilih Jenis Konversi</h2>
+            
+            <div class="converter-tabs">
+                <button class="tab-btn active" data-tab="word-to-pdf">
+                    <span class="tab-icon">📄</span>
+                    Word → PDF
+                </button>
+                <button class="tab-btn" data-tab="pdf-to-word">
+                    <span class="tab-icon">📑</span>
+                    PDF → Text
+                </button>
+            </div>
+
+            <!-- Word to PDF -->
+            <div id="word-to-pdf" class="converter-card active">
+                <div class="upload-area" id="dropzone-word">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 8L12 3L7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Drag & Drop file Word disini</h3>
+                    <p>atau klik untuk browse file</p>
+                    <span class="file-info">Format: .docx | Max: 10MB</span>
+                    <input type="file" id="file-word" accept=".docx,.doc" hidden>
+                </div>
+                
+                <div class="file-preview" id="preview-word" style="display: none;">
+                    <div class="file-icon">📄</div>
+                    <div class="file-details">
+                        <span class="file-name" id="filename-word"></span>
+                        <span class="file-size" id="filesize-word"></span>
+                    </div>
+                    <button class="remove-btn" id="remove-word">✕</button>
+                </div>
+
+                <div class="progress-container" id="progress-word" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill-word"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text-word">Uploading...</span>
+                </div>
+
+                <button class="convert-btn" id="convert-word" disabled>
+                    <span class="btn-text">Convert ke PDF</span>
+                    <div class="spinner" style="display: none;"></div>
+                </button>
+
+                <div class="download-area" id="download-word" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <p>Convert berhasil!</p>
+                    <a href="#" class="download-btn" id="download-link-word">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Download PDF
+                    </a>
+                    <span class="expire-note">⏰ Link expired dalam 5 menit</span>
+                </div>
+            </div>
+
+            <!-- PDF to Word -->
+            <div id="pdf-to-word" class="converter-card">
+                <div class="upload-area" id="dropzone-pdf">
+                    <div class="upload-icon">
+                        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M17 8L12 3L7 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 3V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>Drag & Drop file PDF disini</h3>
+                    <p>atau klik untuk browse file</p>
+                    <span class="file-info">Format: .pdf | Max: 10MB</span>
+                    <input type="file" id="file-pdf" accept=".pdf" hidden>
+                </div>
+                
+                <div class="file-preview" id="preview-pdf" style="display: none;">
+                    <div class="file-icon">📑</div>
+                    <div class="file-details">
+                        <span class="file-name" id="filename-pdf"></span>
+                        <span class="file-size" id="filesize-pdf"></span>
+                    </div>
+                    <button class="remove-btn" id="remove-pdf">✕</button>
+                </div>
+
+                <div class="progress-container" id="progress-pdf" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill-pdf"></div>
+                    </div>
+                    <span class="progress-text" id="progress-text-pdf">Uploading...</span>
+                </div>
+
+                <button class="convert-btn" id="convert-pdf" disabled>
+                    <span class="btn-text">Extract Text</span>
+                    <div class="spinner" style="display: none;"></div>
+                </button>
+
+                <div class="download-area" id="download-pdf" style="display: none;">
+                    <div class="success-icon">✅</div>
+                    <p>Extract text berhasil!</p>
+                    <a href="#" class="download-btn" id="download-link-pdf">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+                            <path d="M21 15V19C21 19.5304 20.7893 20.0391 20.4142 20.4142C20.0391 20.7893 19.5304 21 19 21H5C4.46957 21 3.96086 20.7893 3.58579 20.4142C3.21071 20.0391 3 19.5304 3 19V15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M7 10L12 15L17 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        Download TXT
+                    </a>
+                    <span class="expire-note">⏰ Link expired dalam 5 menit</span>
+                </div>
+
+                <div class="info-note">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                        <path d="M12 16V12M12 8H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                    <span>PDF ke DOCX sempurna membutuhkan engine premium. Fitur ini mengekstrak text dari PDF.</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="[w3.org](http://www.w3.org/2000/svg)">
+                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>DocConverter</span>
+                </div>
+                <p>© 2024 DocConverter. Convert file dengan mudah dan gratis.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/script.js"></script>
+</body>
+</html>
